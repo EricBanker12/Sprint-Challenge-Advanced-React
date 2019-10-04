@@ -27,7 +27,7 @@ class App extends React.Component {
         return (
             <div className='App'>
                 <Navbar />
-                <section>
+                <section className="row">
                     {this.state.players.map(player => <Player key={player.id} {...player} />)}
                 </section>
             </div>

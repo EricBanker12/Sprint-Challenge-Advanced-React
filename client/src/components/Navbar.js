@@ -1,8 +1,9 @@
 import React from 'react'
+import {Button, Navbar} from 'reactstrap'
 
 import useLocalStorage from '../hooks/useLocalStorage'
 
-function Navbar() {
+function NavbarClass() {
     const [darkMode, setDarkMode] = useLocalStorage(false)
 
     function darkModeHandler() {
@@ -18,14 +19,15 @@ function Navbar() {
     },[darkMode])
 
     return (
-        <div>
-            <button
+        <Navbar>
+            <Button
+                className="ml-auto"
                 onClick={darkModeHandler}
             >
                 {darkMode?'Dark Mode':'Light Mode'}
-            </button>
-        </div>
+            </Button>
+        </Navbar>
     )
 }
 
-export default Navbar
+export default NavbarClass

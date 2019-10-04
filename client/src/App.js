@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import './App.css'
 
+import Player from './components/Player'
+
 class App extends React.Component {
     constructor() {
         super()
@@ -23,7 +25,7 @@ class App extends React.Component {
     render() {
         return (
             <div className='App'>
-
+                {this.state.players.map(player => <Player key={player.id} {...player} />)}
             </div>
         )
     }

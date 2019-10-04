@@ -1,9 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render, fireEvent, waitForElement} from '@testing-library/react'
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+test('renders without crashing', () => {
+  render(<App />)
 });
+
+test('renders dark/light mode button', () => {
+  const doc = render(<App />)
+  doc.getByText(/(dark|light) mode/i)
+});
+
+// test('renders player data', () => {
+//   const doc = render(<App />)
+//   const [...players] = await waitForElement(() => {
+//     return [...doc.getAllByTestId('name')]
+//   }, {container: doc})
+// })

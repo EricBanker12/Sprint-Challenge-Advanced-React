@@ -3,8 +3,8 @@ import React from 'react'
 function Player({country, id, name, searches}) {
     return (
         <div>
-            <h3>{name}</h3>
-            <p>{country}</p>
+            <h3 data-testid='name'>{name}</h3>
+            <p>Country: {country}</p>
             <p>Searches: {searches}</p>
         </div>
     )

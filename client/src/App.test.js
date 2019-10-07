@@ -11,9 +11,8 @@ test('renders dark/light mode button', () => {
   doc.getByText(/(dark|light) mode/i)
 });
 
-// test('renders player data', () => {
-//   const doc = render(<App />)
-//   const [...players] = await waitForElement(() => {
-//     return [...doc.getAllByTestId('name')]
-//   }, {container: doc})
-// })
+test('renders player data', async () => {
+  const doc = render(<App />)
+  const players = await waitForElement(() => doc.getAllByTestId('name'))
+  expect(players.length).toBeGreaterThan(10)
+})
